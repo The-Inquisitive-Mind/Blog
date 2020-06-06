@@ -1,6 +1,13 @@
 [
   
     {
+      "title"      : "Installtion",
+      "url"        : "/blog/2020/06/07/installation_and_errors/",
+      "date"       : "2020-06-07 00:00:00 +0530",
+      "shortdate"  : "June 07, 2020"
+    } ,
+  
+    {
       "title"      : "Make post and everything set up",
       "url"        : "/blog/2020/06/06/my-blog/",
       "date"       : "2020-06-06 00:00:00 +0530",
