@@ -66,4 +66,5 @@ paths:
   home: /
   blog: /blog/
   categories: /blog/categories/
+#  images: /blog/images/
   tags: /blog/tags/
