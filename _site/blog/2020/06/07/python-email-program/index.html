@@ -13,22 +13,22 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>A quick demo of Simple Texture theme&#39;s code highlighting features | Blog</title>
+<title>Reading email logs with Python | Blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="A quick demo of Simple Texture theme&#39;s code highlighting features" />
+<meta property="og:title" content="Reading email logs with Python" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A quick demo of Simple Texture theme&#39;s code highlighting features" />
-<meta property="og:description" content="A quick demo of Simple Texture theme&#39;s code highlighting features" />
-<link rel="canonical" href="http://localhost:4000/blog/2017/05/27/code-highlighting/" />
-<meta property="og:url" content="http://localhost:4000/blog/2017/05/27/code-highlighting/" />
+<meta name="description" content="Program for interpreting linux email log file using python for various combinations" />
+<meta property="og:description" content="Program for interpreting linux email log file using python for various combinations" />
+<link rel="canonical" href="http://localhost:4000/blog/2020/06/07/python-email-program/" />
+<meta property="og:url" content="http://localhost:4000/blog/2020/06/07/python-email-program/" />
 <meta property="og:site_name" content="Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-27T00:00:00+05:30" />
+<meta property="article:published_time" content="2020-06-07T00:00:00+05:30" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2017/05/27/code-highlighting/"},"url":"http://localhost:4000/blog/2017/05/27/code-highlighting/","headline":"A quick demo of Simple Texture theme&#39;s code highlighting features","dateModified":"2017-05-27T00:00:00+05:30","datePublished":"2017-05-27T00:00:00+05:30","description":"A quick demo of Simple Texture theme&#39;s code highlighting features","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020/06/07/python-email-program/"},"url":"http://localhost:4000/blog/2020/06/07/python-email-program/","headline":"Reading email logs with Python","dateModified":"2020-06-07T00:00:00+05:30","datePublished":"2020-06-07T00:00:00+05:30","description":"Program for interpreting linux email log file using python for various combinations","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-<meta name="keywords" content="demo,jekyll" />
+<meta name="keywords" content="python,file interpreter" />
 
 
 
@@ -120,7 +120,7 @@
             <header>
                 <div class="unit-head">
                     <div class="unit-inner unit-head-inner">
-                        <h1 class="entry-title" itemprop="name">A quick demo of Simple Texture theme's code highlighting features</h1>
+                        <h1 class="entry-title" itemprop="name">Reading email logs with Python</h1>
                     </div>
                 </div>
             </header>
@@ -130,7 +130,7 @@
                         <p class="date-publish">
                             Published:
                             <time itemprop="datePublished" class="date-pub updated"
-                                title="2017-05-27T00:00:00+05:30" datetime="2017-05-27T00:00:00+05:30">May 27, 2017 </time>
+                                title="2020-06-07T00:00:00+05:30" datetime="2020-06-07T00:00:00+05:30">June 07, 2020 </time>
                             by
                             <a class="author" href="/" rel="author" title="Show Author">
                                 <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -149,8 +149,8 @@
                              
      
         <li>
-            <a href="/blog/categories/#demo" title="demo">
-            demo <span>3</span></a>
+            <a href="/blog/categories/#Python" title="Python">
+            Python <span>1</span></a>
         </li>
     
 
@@ -163,12 +163,12 @@
     
         
         <li>
-            <a href="/blog/tags/#demo" title="demo">demo <span>3</span></a>
+            <a href="/blog/tags/#file-interpreter" title="file interpreter">file interpreter <span>1</span></a>
         </li>
     
         
         <li>
-            <a href="/blog/tags/#jekyll" title="jekyll">jekyll <span>4</span></a>
+            <a href="/blog/tags/#python" title="python">python <span>1</span></a>
         </li>
     
 
@@ -178,81 +178,51 @@
                         </ul>
                     </div>
                     <div itemprop="articleBody">
-                        <blockquote>
-  <p>This is code blocks and highlighting test page for <a href="https://github.com/saumil001/Blog">Simple Texture</a> theme.</p>
-</blockquote>
+                        <h3 id="heading-problem-statement">Problem Statement</h3>
+<p>Program takes Linux email log file as input and interpret based on occurances and text filtering as similar to <code class="language-plaintext highlighter-rouge">awk</code>.
+In following example, we're identifying sender [email] who has sent maximum number of emails.</p>
 
-<ul class="toc" id="markdown-toc">
-  <li><a href="#heading-code-spans" id="markdown-toc-heading-code-spans">Code Spans</a></li>
-  <li><a href="#heading-fenced-code-blocks" id="markdown-toc-heading-fenced-code-blocks">Fenced Code Blocks</a></li>
-  <li><a href="#heading-simple-codeblock-with-long-lines" id="markdown-toc-heading-simple-codeblock-with-long-lines">Simple codeblock with long lines</a></li>
-  <li><a href="#heading-language-of-code-blocks" id="markdown-toc-heading-language-of-code-blocks">Language of Code Blocks</a></li>
-  <li><a href="#heading-highlighted" id="markdown-toc-heading-highlighted">Highlighted</a>    <ul>
-      <li><a href="#heading-external-gist" id="markdown-toc-heading-external-gist">External Gist</a></li>
-      <li><a href="#heading-simple-highlight" id="markdown-toc-heading-simple-highlight">Simple Highlight</a></li>
-      <li><a href="#heading-highlight-with-long-lines" id="markdown-toc-heading-highlight-with-long-lines">Highlight with long lines</a></li>
-      <li><a href="#heading-highlight-with-line-numbers-and-long-lines" id="markdown-toc-heading-highlight-with-line-numbers-and-long-lines">Highlight with line numbers and long lines</a></li>
-    </ul>
-  </li>
-</ul>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter file:"</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">"mbox-short.txt"</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-<h1 id="heading-code-spans">Code Spans</h1>
+<span class="n">bigword</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">bigcount</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">count</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
-<p>This is a test for inline codeblocks like <code class="language-plaintext highlighter-rouge">C:/Ruby23-x64</code> or <code class="language-plaintext highlighter-rouge">SELECT  "offices".* FROM "offices" </code></p>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'From '</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="c1"># Following line set key of the dictionary as email id (from index position 1) and value as 0 if first occurance or increment count if count is not 0
+</span>        <span class="n">count</span><span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 
-<p>Here is a literal <code class="language-plaintext highlighter-rouge">`</code> backtick.
-And here is a Ruby code fragment <code class="language-plaintext highlighter-rouge"><span class="n">x</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span></code></p>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">bigword</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">bigcount</span><span class="p">:</span>
+        <span class="n">bigword</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="n">bigcount</span> <span class="o">=</span> <span class="n">value</span>
 
-<h1 id="heading-fenced-code-blocks">Fenced Code Blocks</h1>
+<span class="k">print</span><span class="p">(</span><span class="s">'Sender'</span><span class="p">,</span><span class="n">bigword</span><span class="p">,</span><span class="s">'who has sent maximum mails for'</span><span class="p">,</span><span class="n">bigcount</span><span class="p">,</span><span class="s">'times'</span><span class="p">)</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~~~~~~~
-code with tildes
-~~~~~~~~
 </code></pre></div></div>
 
-<h1 id="heading-simple-codeblock-with-long-lines">Simple codeblock with long lines</h1>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function myFunction() {
-    alert("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
-}
-</code></pre></div></div>
-
-<h1 id="heading-language-of-code-blocks">Language of Code Blocks</h1>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">what?</span>
-  <span class="mi">42</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h1 id="heading-highlighted">Highlighted</h1>
-
-<h2 id="heading-external-gist">External Gist</h2>
-
-<script src="https://gist.github.com/yizeng/9b871ad619e6dcdcc0545cac3101f361.js"></script>
-
-<h2 id="heading-simple-highlight">Simple Highlight</h2>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">foo</span>
-  <span class="nb">puts</span> <span class="s1">'foo'</span>
-<span class="k">end</span></code></pre></figure>
-
-<h2 id="heading-highlight-with-long-lines">Highlight with long lines</h2>
-
-<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">class</span> <span class="nc">Hello</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<h2 id="heading-highlight-with-line-numbers-and-long-lines">Highlight with line numbers and long lines</h2>
+<h3 id="heading-example-log-file">Example log file:</h3>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">}</span>
+4
+</pre></td><td class="code"><pre><span class="nx">From</span> <span class="nx">stephen</span><span class="p">.</span><span class="nx">marquard</span><span class="p">@</span><span class="nd">uct</span><span class="p">.</span><span class="nx">ac</span><span class="p">.</span><span class="nx">za</span> <span class="nx">Sat</span> <span class="nx">Jan</span>  <span class="mi">5</span> <span class="mi">09</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span> <span class="mi">2008</span>
+<span class="nx">Return</span><span class="o">-</span><span class="nx">Path</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">postmaster</span><span class="p">@</span><span class="nd">collab</span><span class="p">.</span><span class="nx">sakaiproject</span><span class="p">.</span><span class="nx">org</span><span class="o">&gt;</span>
+<span class="o">------------------------------</span>
+<span class="nx">From</span> <span class="nx">louis</span><span class="p">@</span><span class="nd">media</span><span class="p">.</span><span class="nx">berkeley</span><span class="p">.</span><span class="nx">edu</span> <span class="nx">Fri</span> <span class="nx">Jan</span>  <span class="mi">4</span> <span class="mi">18</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">48</span> <span class="mi">2008</span>
 </pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="heading-corresponding-video-here">Corresponding video here</h3>
+<iframe width="600" height="415" src="https://www.youtube.com/embed/ypztpBvEe8k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="heading-execution">Execution:</h3>
+<p><img src="/blog/images/python_execution_20200607.jpg" alt="execution1" /></p>
 
 
                     </div>
@@ -266,10 +236,8 @@ code with tildes
                     </div>
                     <nav class="pagination">
                         
-                            <a class="internal" rel="prev" href="/blog/2017/05/25/quick-kramdown-demo/" title=" 'Quick kramdown demo'"> ← Quick kramdown demo</a>
+                            <a class="internal" rel="prev" href="/blog/2020/06/07/installation_and_errors/" title=" 'Installtion'"> ← Installtion</a>
                         
-                        
-                            <a class="internal" rel="next" href="/blog/2020/06/06/my-blog/" title="Next Post 'Make post and everything set up'">Make post and everything set up → </a>
                         
                     </nav>
                 </div>
